@@ -36,9 +36,9 @@ Create a .env file in then root and add the following
 ```
 NODE_ENV = development
 PORT = 5000
-MONGO_URI = your mongodb uri
-JWT_SECRET = 'abc123'
-PAYPAL_CLIENT_ID = your paypal client id
+MONGO_URI =mongodb+srv://wassim3meddeb:Wassimmeddeb9@sabattn.4w7bj.mongodb.net/SabatTN?retryWrites=true&w=majority
+JWT_SECRET = 'wess'
+PAYPAL_CLIENT_ID = ATDHuBTUobXum6sHg0GWDPQmmZ_okd6mwrZqNEG1lT8r0yFoHMER3Xc8yKdkJ5S9t6rh5XxpP2M-rasK
 ```
 
 ### Install Dependencies (frontend & backend)
@@ -67,7 +67,6 @@ cd frontend
 npm run build
 ```
 
-There is a Heroku postbuild script, so if you push to Heroku, no need to build manually for deployment to Heroku
 
 ### Seed Database
 
