@@ -5,7 +5,7 @@ import Product from "../models/productModel.js";
 // @route   GET /api/products
 // @access  Public
 const getProducts = asyncHandler(async (req, res) => {
-  const pageSize = 10;
+  const pageSize = 50;
   const page = Number(req.query.pageNumber) || 1;
 
   const keyword = req.query.keyword
@@ -58,6 +58,7 @@ const deleteProduct = asyncHandler(async (req, res) => {
 // @route   POST /api/products
 // @access  Private/Admin
 const createProduct = asyncHandler(async (req, res) => {
+  console.log(req.body);
   const product = new Product({
     name: "Sample name",
     price: 0,
