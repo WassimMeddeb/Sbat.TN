@@ -1,0 +1,7 @@
+{
+  "title": "Bienvenue à réagir et react-i18next",
+  "description": {
+    "part1": "Pour commencer, monnaie<1>src/App(DE).js</1> enregistrer et recharger.",
+    "part2": "Changez les langues entre l'allemand et l'anglais à l'aide des deux interrupteurs."
+  }
+}

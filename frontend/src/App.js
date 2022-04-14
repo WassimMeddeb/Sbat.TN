@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import Header from './components/Header'
@@ -18,11 +18,43 @@ import UserEditScreen from './screens/UserEditScreen'
 import ProductListScreen from './screens/ProductListScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
 import OrderListScreen from './screens/OrderListScreen'
+import { Trans, useTranslation } from 'react-i18next'
+
+
+
+ function Translate() {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
+
+  return (
+    <div className="App">
+      <button onClick={() => changeLanguage("en")}>EN</button>
+      <button onClick={() => changeLanguage("fr")}>fr</button>
+      <hr/>
+      <Trans i18nKey="description.part1">
+        To get started, edit <code>src/App.js</code> and save to reload.
+      </Trans>
+      <div>{t("description.part2")}</div>
+    </div>
+  );
+}
+
+
+
 
 const App = () => {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
   return (
     <Router>
-      <Header />
+      <Header/>
+     
       <main className='py-3'>
         <Container>
           <Route path='/order/:id' component={OrderScreen} />
@@ -57,10 +89,17 @@ const App = () => {
           />
           <Route path='/' component={HomeScreen} exact />
         </Container>
+        
       </main>
-      <Footer />
+      <Footer/>
+      
+
     </Router>
+    
+   
   )
+  
+  
 }
 
-export default App
+export default App;

@@ -48,18 +48,18 @@ const OrderListScreen = ({ history }) => {
               <tr key={order._id}>
                 <td>{order._id}</td>
                 <td>{order.user && order.user.name}</td>
-                <td>{order.createdAt.slice(0, 10)}</td>
+                <td>{order.createdAt.substring(0, 100)}</td>
                 <td>${order.totalPrice}</td>
                 <td>
                   {order.isPaid ? (
-                    order.paidAt.slice(0, 10)
+                    order.paidAt.substring(0, 100)
                   ) : (
                     <i className='fas fa-times' style={{ color: 'red' }}></i>
                   )}
                 </td>
                 <td>
                   {order.isDelivered ? (
-                    order.deliveredAt.slice(0, 10)
+                    order.deliveredAt=Date()
                   ) : (
                     <i className='fas fa-times' style={{ color: 'red' }}></i>
                   )}
